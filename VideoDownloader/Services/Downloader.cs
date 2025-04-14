@@ -31,7 +31,7 @@ namespace VideoDownloader.Services
                 var stream = await httpClient.GetStreamAsync(streamInfo.Url); // создаём поток для скачивания
                 var datetime = DateTime.Now; // текущая дата и время
 
-                string outputFilePath = Path.Combine(outputDirectory, $"{sanitizedTitle}.{streamInfo.Container}"); // путь до скаченного файла
+                string outputFilePath = Path.Combine(outputDirectory, $"{sanitizedTitle}.{streamInfo.Container}"); // путь для скаченного файла
                 using var outputStream = File.Create(outputFilePath); // поток для создания файла
                 await stream.CopyToAsync(outputStream);
 
