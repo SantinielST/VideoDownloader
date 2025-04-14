@@ -1,12 +1,17 @@
-﻿namespace VideoDownloader.Commands;
+﻿using VideoDownloader.Services;
 
+namespace VideoDownloader.Commands;
+
+/// <summary>
+/// команда для поиска информации о видео
+/// </summary>
 internal class GetVideoInfoCommand : ICommand
 {
     private Informer _informer;
 
     public GetVideoInfoCommand(Informer informer)
     {
-        _informer = informer;
+        _informer = informer; // подключаем к командам
     }
 
     public void Execute()
@@ -16,6 +21,6 @@ internal class GetVideoInfoCommand : ICommand
 
     public void Undo()
     {
-        throw new NotImplementedException();
+       
     }
 }

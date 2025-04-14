@@ -1,14 +1,20 @@
 ﻿using System.Text;
+using VideoDownloader.Exceptions;
+using YoutubeExplode.Videos;
 
-namespace VideoDownloader
+namespace VideoDownloader.Services
 {
+    /// <summary>
+    /// сервис для вывода информации о видео
+    /// </summary>
     internal class Informer
     {
         private VideoFinder videoFinder = new VideoFinder();
+        private Video video;
 
         public void GetVideoInfo()
         {
-            var video = videoFinder.GetVideo().Result;
+            video = videoFinder.GetVideo();
 
             var videoInfoTextBuilder = new StringBuilder();
 

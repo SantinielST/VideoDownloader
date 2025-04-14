@@ -2,6 +2,9 @@
 
 namespace VideoDownloader;
 
+/// <summary>
+/// класс содержит набор каманд и активирует их взависимости от выбора пользователя
+/// </summary>
 internal class Sender
 {
     ICommand[] commands;
